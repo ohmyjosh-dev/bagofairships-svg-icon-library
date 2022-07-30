@@ -1,11 +1,11 @@
 {
-  "name": "REPLACE_ME",
+  "name": "bag-of-airship-icons",
   "version": "1.0.0",
   "description": "Starter project to build an SVG icon library",
   "main": "index.js",
   "sideEffects": false,
   "scripts": {
-    "build:library": "npm run transform-icons && npm run copy-library-assets",
+    "build:library": "rimraf ./dist && npm run transform-icons && npm run copy-library-assets && cd ./dist/icons && npm pack",
     "build:showcase": "npm run build:library && npm run bundle-showcase && npm run copy-showcase-files",
     "bundle-showcase": "webpack --config ./showcase/webpack.config.js",
     "commit": "git-cz",
@@ -34,6 +34,7 @@
     "cpx": "^1.5.0",
     "git-cz": "^4.7.1",
     "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "svg-to-ts": "^6.0.0",
     "typescript": "^4.0.3",
     "webpack": "^3.12.0"
